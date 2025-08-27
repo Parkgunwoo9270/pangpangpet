@@ -11,8 +11,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
-        {/* <meta name="naver-site-verification" content="5c664ee06e402c9db7cc239b8276896c77c9a708" /> */}
-        <meta name="naver-site-verification" content="여기에_네이버에서_준_값" />
+        {/* ✅ 네이버 메타태그 */}
+        <meta name="naver-site-verification" content="<meta name="naver-site-verification" content="5c664ee06e402c9db7cc239b8276896c77c9a708" />" />
       </head>
       <body>{children}</body>
     </html>
