@@ -21,3 +21,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="ko">
+      <head>
+        <title>PangpangPet</title>
+        {/* ✅ 구글 소유권 확인 메타태그 */}
+        <meta name="google-site-verification" content="<meta name="google-site-verification" content="lPFc5jlkp9V83bm-hoSmTEiSVScVYV1VHM6thkA4lGc" />" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
