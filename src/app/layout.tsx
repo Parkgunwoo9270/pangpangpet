@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Baloo_2, Noto_Sans_KR } from "next/font/google";
+
+const baloo = Baloo_2({ subsets: ["latin"], weight: ["700","800"] });
+const noto = Noto_Sans_KR({ subsets: ["latin"], weight: ["400","700","900"] });
 
 export const metadata: Metadata = {
   title: "PangpangPet",
@@ -12,10 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <head>
-        {/* (유지) 네이버/구글 소유권 메타태그가 있다면 여기 유지 */}
-      </head>
-      <body>
+      <body className={`${noto.className} ${baloo.className}`}>
         <Header />
         {children}
         <Footer />
