@@ -188,3 +188,140 @@
   border:2px dashed var(--brand-navy); border-radius:14px; padding:12px; max-width:260px;
   font-weight:700;
 }
+/* === PF Base === */
+:root{
+  --brand-orange:#F29F32; --brand-navy:#181828; --ivory:#FFF3E0;
+  --ink:#111; --muted:#667085; --line:#e5e7eb; --soft:#f8fafc;
+  --radius:16px;
+}
+.pf-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* Header */
+.pf-header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+.pf-header .pf-wrap{display:flex;align-items:center;gap:10px;padding:12px 0}
+.pf-logo{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;
+  background:var(--brand-orange);color:#fff;font-weight:900;text-decoration:none}
+.pf-search{flex:1;display:flex;gap:8px}
+.pf-search input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 14px}
+.pf-search button{border-radius:999px;padding:10px 14px;border:1px solid var(--line);background:#fff}
+.pf-icons{display:flex;gap:10px}
+.pf-burger{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px}
+
+/* Hero carousel (no lib) */
+.pf-hero{background:var(--brand-orange);color:#fff;overflow:hidden}
+.pf-hero-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:12px;scroll-snap-type:x mandatory;overflow-x:auto;padding:18px 0}
+.pf-hero-track::-webkit-scrollbar{display:none}
+.pf-hero-card{scroll-snap-align:start;background:rgba(24,24,40,.1);border:2px solid #fff;
+  border-radius:20px;padding:24px}
+.pf-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+  font-weight:700;text-decoration:none}
+.pf-btn--dark{background:var(--brand-navy);color:#fff}
+.pf-btn--ghost{border:1px solid var(--line);color:var(--ink);background:#fff}
+
+/* Chips */
+.pf-chipbar{background:#fff;border-bottom:1px solid var(--line)}
+.pf-chip-scroll{display:flex;gap:10px;overflow:auto;padding:12px 0}
+.pf-chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;text-decoration:none;color:inherit;white-space:nowrap}
+.pf-chip:active{transform:scale(.98)}
+
+/* Delivery / benefits */
+.pf-benefits{background:#fff}
+.pf-benefit-grid{display:grid;grid-template-columns:1fr;gap:10px;padding:16px 0}
+@media(min-width:900px){.pf-benefit-grid{grid-template-columns:repeat(3,1fr)}}
+.pf-benefit{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px;font-weight:700}
+
+/* Section / Tabs / Grid / Card */
+.pf-section{padding:20px 0}
+.pf-section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.pf-tabs{display:flex;gap:6px}
+.pf-tabs button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px}
+.pf-tabs .active{background:var(--ivory);border-color:var(--brand-orange)}
+
+.pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:900px){.pf-grid{grid-template-columns:repeat(3,1fr)}}
+.pf-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:8px}
+.pf-thumb{aspect-ratio:1/1;border:1px dashed var(--line);border-radius:10px;display:grid;place-items:center;font-size:40px}
+.pf-name{margin:0;font-weight:800}
+.pf-price{display:flex;align-items:center;gap:8px}
+.pf-price b{font-size:18px}
+.pf-price s{color:var(--muted);font-size:12px}
+/* ===== PangpangPet hero size & layout fix (fluid) ===== */
+
+/* 컨테이너 폭 넓혀서 답답함 해소 */
+.hero-wrap, .pf-wrap{
+  max-width: 1200px;           /* 1100 -> 1200 */
+  padding-left: 24px; 
+  padding-right: 24px;
+}
+
+/* 히어로 섹션 높이/내부 여백을 상황별로 유동화 */
+.hero-brand{
+  padding: clamp(56px, 6vw, 92px) 0 clamp(40px, 5vw, 72px);
+}
+
+/* 2칸 그리드 정렬 + 간격 확장 */
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* 타이틀/본문을 가변 폰트 크기로 */
+.hero-title{
+  font-size: clamp(32px, 5.5vw, 64px);
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+.hero-sub{
+  font-size: clamp(14px, 1.7vw, 18px);
+  margin: 8px 0 18px;
+}
+
+/* 버튼 그룹/뱃지 행 간격 */
+.hero-brand .btn-cta{ 
+  padding: clamp(10px, 1.2vw, 14px) clamp(14px, 1.6vw, 18px);
+  border-radius: 14px;
+  font-weight: 800;
+}
+.badges{ gap: clamp(8px, 1vw, 12px); }
+
+/* 오른쪽 모형(기울어진 카드) 크기/정렬 안정화 */
+.mock-tilt{
+  width: clamp(260px, 38vw, 480px);
+  height: clamp(220px, 28vw, 360px);
+  margin-left: auto;                 /* 오른쪽에 바짝 정렬 */
+  transform: rotate(-3deg);
+  box-shadow: 0 18px 28px rgba(24,24,40,.22);
+}
+.mock-emoji{ font-size: clamp(48px, 6vw, 80px); }
+.ribbon{ font-size: clamp(11px, 1.2vw, 12px); padding: 8px 12px; }
+
+/* 말풍선 노트 여백/폭 조절 */
+.note{
+  margin-top: 12px;
+  max-width: clamp(220px, 32vw, 300px);
+  padding: clamp(10px, 1.2vw, 14px);
+}
+
+/* 파우 패턴과 웨이브 크기 완화 */
+.hero-brand::before{
+  background-size: 160px 160px, 140px 140px; /* 패턴 큼직, 덜 촘촘하게 */
+  opacity: .35;                              /* 시각적 부담 완화 */
+}
+.hero-wave{ height: clamp(28px, 4vw, 44px); } /* 하단 웨이브 낮춤 */
+
+/* 헤더 바운딩 박스 살짝 낮추기 (상단 여백 충돌 방지) */
+.pf-header .pf-wrap{ padding: 10px 0; }
+
+/* 중간 해상도(태블릿) 최적화 */
+@media (max-width: 1024px){
+  .hero-grid{ grid-template-columns: 1fr; }  /* 위아래 스택 */
+  .mock-tilt{ margin: 10px auto 0; }         /* 가운데 배치 */
+  .note{ margin-left: auto; margin-right: auto; }
+}
+
+/* 작은 모바일에서 좌우 숨쉬기 공간 확보 */
+@media (max-width: 480px){
+  .hero-wrap{ padding-left: 16px; padding-right: 16px; }
+}

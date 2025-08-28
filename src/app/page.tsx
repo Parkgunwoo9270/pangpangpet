@@ -1,40 +1,75 @@
 // src/app/page.tsx
-export default function HomePage(){
-  return (
-    <main className="hero-brand">
-      <div className="hero-wrap">
-        <div className="hero-grid">
-          {/* 왼쪽: 카피/버튼 */}
-          <div>
-            <h1 className="hero-title">
-              예방이 최고의 보호입니다.
-            </h1>
-            <p className="hero-sub">
-              레반 기반 포뮬러와 유산균 블렌드로<br/>
-              반려동물의 장 건강을 매일 꾸준히.
-            </p>
-            <div style={{display:"flex",gap:12,flexWrap:"wrap"}}>
-              <a className="btn-cta btn-cta--dark" href="/products">제품 보기</a>
-              <a className="btn-cta btn-cta--light" href="/brand">브랜드 철학</a>
-            </div>
-            <ul className="badges">
-              <li>레반 포뮬러</li>
-              <li>유산균 블렌드</li>
-              <li>정기구독 예정</li>
-            </ul>
-          </div>
+import Link from "next/link";
 
-          {/* 오른쪽: 기울어진 카드 + 리본 */}
-          <div>
-            <div className="mock-tilt">
-              <div className="ribbon">PangpangPet</div>
-              <div className="mock-emoji">🐶🐱</div>
-            </div>
-            <div className="note">Prevention · Protection · Partnership</div>
-          </div>
+const hero = [
+  { title: "레반 포뮬러 런칭", desc: "장 건강을 위한 핵심 설계", cta: "/products" },
+  { title: "첫구매 웰컴 혜택", desc: "신규 고객 전용 쿠폰", cta: "/products" },
+  { title: "정기구독 예정", desc: "꾸준한 장케어를 더 쉽게", cta: "/brand" },
+];
+
+const cats = [
+  { name:"제품", href:"/products" },
+  { name:"브랜드", href:"/brand" },
+  { name:"ESG 유기견 활동", href:"/esg" },
+  { name:"협력 기관(입점)", href:"/partners" },
+  { name:"문의", href:"/contact" },
+];
+
+export default function Home() {
+  return (
+    <main>
+      {/* 1) 히어로 캐러셀(단순 슬라이드) */}
+      <section className="pf-hero">
+        <div className="pf-wrap pf-hero-track">
+          {hero.map((h,i)=>(
+            <article className="pf-hero-card" key={i}>
+              <h2>{h.title}</h2>
+              <p>{h.desc}</p>
+              <Link className="pf-btn pf-btn--dark" href={h.cta}>바로보기</Link>
+            </article>
+          ))}
         </div>
-      </div>
-      <div className="hero-wave" />
+      </section>
+
+      {/* 2) 카테고리 칩 가로 스크롤 */}
+      <nav className="pf-chipbar" aria-label="주요 메뉴">
+        <div className="pf-wrap pf-chip-scroll">
+          {cats.map(c=>(
+            <Link key={c.name} href={c.href} className="pf-chip">{c.name}</Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* 3) 배송/편의 배지 */}
+      <section className="pf-benefits">
+        <div className="pf-wrap pf-benefit-grid">
+          <div className="pf-benefit">⚡ 오늘주문 오늘도착(일부 지역)</div>
+          <div className="pf-benefit">🌙 새벽배송</div>
+          <div className="pf-benefit">🔁 정기구독 예정</div>
+        </div>
+      </section>
+
+      {/* 4) 탭형 추천 섹션(샘플) */}
+      <section className="pf-wrap pf-section">
+        <header className="pf-section-head">
+          <h3>추천 상품</h3>
+          <div className="pf-tabs">
+            <button className="active">강아지</button>
+            <button>고양이</button>
+          </div>
+        </header>
+        <div className="pf-grid">
+          {/* TODO: 실제 상품 데이터 바인딩 */}
+          {Array.from({length:6}).map((_,i)=>(
+            <article className="pf-card" key={i}>
+              <div className="pf-thumb">🐶</div>
+              <h4 className="pf-name">레반 · 유산균 포뮬러 {i+1}</h4>
+              <div className="pf-price"><b>29,900</b><s>35,000</s></div>
+              <Link className="pf-btn pf-btn--ghost" href="/products">자세히</Link>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
