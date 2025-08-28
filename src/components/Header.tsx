@@ -1,25 +1,20 @@
 // src/components/Header.tsx
-"use client";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Header() {
-  const [q, setQ] = useState("");
   return (
-    <header className="pf-header">
-      <div className="pf-wrap">
-        <Link href="/" className="pf-logo">PP</Link>
-        <form action="/search" className="pf-search">
-          <input
-            name="q" value={q} onChange={e=>setQ(e.target.value)}
-            placeholder="레반 · 유산균 · 브랜드 검색"
-            aria-label="검색"
-          />
-          <button type="submit">검색</button>
-        </form>
-        <nav className="pf-icons">
-          <Link href="/cart" aria-label="장바구니">🛒</Link>
-          <button aria-label="메뉴" className="pf-burger">☰</button>
+    <header className="pp-head">
+      <div className="pp-wrap pp-head__inner">
+        <Link href="/" className="pp-brand">
+          <span className="pp-brand__logo">PP</span>
+          <strong className="pp-brand__name">PangpangPet</strong>
+        </Link>
+        <nav className="pp-gnb" aria-label="주요 메뉴">
+          <Link href="/products">제품</Link>
+          <Link href="/brand">브랜드</Link>
+          <Link href="/esg">ESG 활동</Link>
+          <Link href="/partners">협력 기관</Link>
+          <Link href="/contact">문의</Link>
         </nav>
       </div>
     </header>
