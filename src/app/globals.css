@@ -439,3 +439,177 @@
 @media (max-width: 480px){
   .hero-wrap{ padding-left: 16px; padding-right: 16px; }
 }
+/* ===============================
+   HERO / BANNER – CROPPING FIX
+   =============================== */
+
+/* 배경 섹션(머스터드 컬러) – 내부 요소를 자르지 않도록 */
+.section-hero, .hero-brand, .hero-grid {
+  overflow: visible;
+}
+
+/* 히어로 래퍼: 중앙 정렬 + 좌우 안전 패딩(화면에 닿지 않도록) */
+.hero-rail{
+  --hero-pad: clamp(16px, 3vw, 24px);
+  --hero-radius: 22px;
+  --hero-outline: 3px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--hero-pad);
+  box-sizing: border-box;
+}
+
+/* 배너 프레임: 화면 비율에 따라 부드럽게 크기 유지 */
+.hero-frame{
+  position: relative;
+  border-radius: var(--hero-radius);
+  outline: var(--hero-outline) solid #ffffff;         /* 흰색 외곽선 */
+  overflow: hidden;                                   /* 프레임 안에서만 잘라냄 */
+  background: #cd9544;                                /* 브랜드 배경(머스터드) */
+  aspect-ratio: 21 / 9;                               /* 데스크탑 21:9 */
+  box-shadow: 0 18px 28px rgba(24,24,40,.14);
+}
+
+/* 모바일/태블릿에서 높이 보정 */
+@media (max-width: 1024px){
+  .hero-frame{ aspect-ratio: 16 / 9; }                /* 태블릿 */
+}
+@media (max-width: 560px){
+  .hero-frame{ aspect-ratio: 4 / 3; }                 /* 작은 모바일 */
+}
+
+/* 이미지가 프레임을 꽉 채우고 중앙에 오도록 */
+.hero-frame > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 프레임 안 텍스트/버튼 위치 잡기 */
+.hero-body{
+  position: absolute;
+  inset: 0;                         /* 프레임 전체 */
+  display: grid;
+  align-content: center;            /* 수직 가운데 */
+  gap: clamp(8px, 1.6vw, 14px);
+  padding: clamp(16px, 4vw, 40px);
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+
+.hero-title{
+  font-size: clamp(22px, 3.8vw, 40px);
+  line-height: 1.15;
+  font-weight: 900;
+  margin: 0;
+}
+
+.hero-sub{
+  font-size: clamp(14px, 1.6vw, 18px);
+  opacity: .95;
+}
+
+/* CTA 버튼 */
+.hero-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(14px, 1.6vw, 18px);
+  border-radius: 14px;
+  background: #111827;               /* 다크 네이비 */
+  color: #fff; text-decoration: none; font-weight: 800;
+}
+.hero-cta:hover{ filter: brightness(.96); }
+
+/* 칩(제품/브랜드/ESG/협력/문의) – 줄바꿈/스크롤 대응 */
+.nav-chips{
+  max-width: 1240px;
+  margin: 10px auto 0;
+  padding: 0 clamp(16px, 3vw, 24px);
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.nav-chips a{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff; border: 1px solid #e5e7eb;
+  color: #111; text-decoration: none; font-weight: 700;
+}
+.nav-chips a:hover{ border-color: #0ea5a4; color: #0ea5a4; }
+
+/* 헤더/히어로 주변에 box-sizing을 명시해 폭 계산 오류 방지 */
+*, *::before, *::after { box-sizing: border-box; }
+/* ===============================
+   HERO / BANNER – CROPPING FIX
+   =============================== */
+
+.section-hero, .hero-rail { overflow: visible; }
+
+/* 중앙 정렬 컨테이너 */
+.hero-rail{
+  --hero-pad: clamp(16px, 3vw, 24px);
+  --hero-radius: 22px;
+  --hero-outline: 3px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--hero-pad);
+  box-sizing: border-box;
+}
+
+/* 배너 프레임: 외곽선/그림자 포함, 비율 고정, 내부에서만 잘라냄 */
+.hero-frame{
+  position: relative;
+  border-radius: var(--hero-radius);
+  outline: var(--hero-outline) solid #ffffff;
+  overflow: hidden;
+  background: #cd9544;                       /* 필요 시 이미지로 대체 */
+  aspect-ratio: 21 / 9;                      /* 데스크탑 비율 */
+  box-shadow: 0 18px 28px rgba(24,24,40,.14);
+  display: block; text-decoration: none; color: inherit;
+}
+@media (max-width: 1024px){ .hero-frame{ aspect-ratio: 16 / 9; } }
+@media (max-width: 560px){  .hero-frame{ aspect-ratio: 4 / 3; } }
+
+/* 프레임 이미지(선택) */
+.hero-frame > img{
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+
+/* 텍스트/CTA 오버레이 */
+.hero-body{
+  position: absolute; inset: 0;
+  display: grid; align-content: center; gap: clamp(8px, 1.6vw, 14px);
+  padding: clamp(16px, 4vw, 40px);
+  color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+.hero-title{ font-size: clamp(22px, 3.8vw, 40px); line-height: 1.15; font-weight: 900; margin: 0; }
+.hero-sub{   font-size: clamp(14px, 1.6vw, 18px); opacity: .95; }
+
+.hero-cta{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(14px, 1.6vw, 18px);
+  border-radius: 14px;
+  background: #111827; color:#fff; font-weight: 800; text-decoration:none;
+}
+.hero-cta:hover{ filter: brightness(.96); }
+
+/* 칩 네비 – 줄바꿈/스크롤 대응 */
+.nav-chips{
+  max-width: 1240px;
+  margin: 10px auto 0;
+  padding: 0 clamp(16px, 3vw, 24px);
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.nav-chips a{
+  display:inline-block; padding:10px 14px;
+  border-radius:999px; background:#fff; border:1px solid #e5e7eb;
+  color:#111; text-decoration:none; font-weight:700;
+}
+.nav-chips a:hover{ border-color:#0ea5a4; color:#0ea5a4; }
+
+/* 폭 계산 오류 방지 */
+*, *::before, *::after { box-sizing: border-box; }

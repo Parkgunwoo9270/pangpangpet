@@ -16,31 +16,38 @@ const cats = [
 ];
 
 export default function Home() {
+  // 캐러셀은 유지하되 “첫 슬라이드”를 배너로 노출 (원하면 슬라이더로 확장 가능)
+  const first = hero[0];
+
   return (
     <main>
-      {/* 1) 히어로 캐러셀(단순 슬라이드) */}
-      <section className="pf-hero">
-        <div className="pf-wrap pf-hero-track">
-          {hero.map((h,i)=>(
-            <article className="pf-hero-card" key={i}>
-              <h2>{h.title}</h2>
-              <p>{h.desc}</p>
-              <Link className="pf-btn pf-btn--dark" href={h.cta}>바로보기</Link>
-            </article>
-          ))}
+      {/* =========================
+          1) 히어로(배너) – 절대 잘리지 않게
+         ========================= */}
+      <section className="section-hero" style={{ background: "var(--brand-orange)" }}>
+        <div className="hero-rail">
+          {/* 이미지가 있으면 <img /> 추가 가능. 지금은 배경+텍스트만 */}
+          <a className="hero-frame" href={first.cta}>
+            {/* <img src="/hero-banner.jpg" alt="레반 포뮬러 런칭" /> */}
+            <div className="hero-body">
+              <h2 className="hero-title">{first.title}</h2>
+              <p className="hero-sub">{first.desc}</p>
+              <span className="hero-cta">바로보기</span>
+            </div>
+          </a>
         </div>
+
+        {/* 칩 네비게이션 */}
+        <nav className="nav-chips" aria-label="주요 메뉴">
+          {cats.map(c => (
+            <Link key={c.name} href={c.href}>{c.name}</Link>
+          ))}
+        </nav>
       </section>
 
-      {/* 2) 카테고리 칩 가로 스크롤 */}
-      <nav className="pf-chipbar" aria-label="주요 메뉴">
-        <div className="pf-wrap pf-chip-scroll">
-          {cats.map(c=>(
-            <Link key={c.name} href={c.href} className="pf-chip">{c.name}</Link>
-          ))}
-        </div>
-      </nav>
-
-      {/* 3) 배송/편의 배지 */}
+      {/* =========================
+          2) 배송/편의 배지
+         ========================= */}
       <section className="pf-benefits">
         <div className="pf-wrap pf-benefit-grid">
           <div className="pf-benefit">⚡ 오늘주문 오늘도착(일부 지역)</div>
@@ -49,7 +56,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4) 탭형 추천 섹션(샘플) */}
+      {/* =========================
+          3) 탭형 추천 섹션(샘플)
+         ========================= */}
       <section className="pf-wrap pf-section">
         <header className="pf-section-head">
           <h3>추천 상품</h3>
@@ -58,9 +67,10 @@ export default function Home() {
             <button>고양이</button>
           </div>
         </header>
+
         <div className="pf-grid">
           {/* TODO: 실제 상품 데이터 바인딩 */}
-          {Array.from({length:6}).map((_,i)=>(
+          {Array.from({length:6}).map((_, i) => (
             <article className="pf-card" key={i}>
               <div className="pf-thumb">🐶</div>
               <h4 className="pf-name">레반 · 유산균 포뮬러 {i+1}</h4>
