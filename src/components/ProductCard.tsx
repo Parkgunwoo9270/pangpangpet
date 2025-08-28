@@ -1,37 +1,30 @@
+// src/components/ProductCard.tsx
+import Link from "next/link";
+
 type Props = {
   name: string;
-  price: number;
-  imgSrc?: string;  // 이미지 없으면 플레이스홀더
-  badge?: string;   // "RENEWAL" 같은 라벨
+  price: string;        // "29,900"
+  compareAt?: string;   // "35,000"
+  href: string;
+  emoji?: string;       // 이미지 준비 전 임시
+  badge?: string;       // "신상" 등
 };
 
-export default function ProductCard({ name, price, imgSrc, badge }: Props) {
+export default function ProductCard({
+  name, price, compareAt, href, emoji = "🐶", badge,
+}: Props) {
   return (
-    <div className="group border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
-      <div className="relative aspect-[4/3] bg-neutral-100 grid place-items-center">
-        {imgSrc ? (
-          <img src={imgSrc} alt={name} className="h-full w-full object-cover" />
-        ) : (
-          <div className="text-neutral-400">이미지 준비중</div>
-        )}
-        {badge && (
-          <span className="absolute left-3 top-3 text-[10px] tracking-wide rounded-full bg-black/80 text-white px-2 py-1">
-            {badge}
-          </span>
-        )}
+    <article className="pf-card">
+      <div className="pf-thumb" aria-hidden>
+        <span style={{ fontSize: 32 }}>{emoji}</span>
       </div>
-
-      <div className="p-4">
-        <div className="font-semibold">{name}</div>
-        <div className="text-sm text-neutral-600 mt-1">
-          {price.toLocaleString()}원
-        </div>
-
-        {/* ⛔ onClick 제거 → 단순 표시만 */}
-        <span className="mt-3 inline-flex text-sm rounded-md border px-3 py-1.5 cursor-not-allowed opacity-60 select-none">
-          출시 대기
-        </span>
+      {badge && <div className="pf-badge">{badge}</div>}
+      <h4 className="pf-name">{name}</h4>
+      <div className="pf-price">
+        <b>{price}</b>
+        {compareAt && <s>{compareAt}</s>}
       </div>
-    </div>
+      <Link className="pf-btn pf-btn--ghost" href={href}>자세히</Link>
+    </article>
   );
 }

@@ -17,6 +17,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body className={`${noto.className} ${baloo.className}`}>
+        {/* Organization 스키마 (SEO) */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PangpangPet",
+              url: "https://www.pangpangpet.com",
+              brand: "PangpangPet",
+              slogan: "Prevention · Protection · Partnership",
+            }),
+          }}
+        />
         <Header />
         {children}
         <Footer />

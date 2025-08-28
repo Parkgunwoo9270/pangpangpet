@@ -698,3 +698,20 @@
 .pp-foot__link{ display:block; color:inherit; text-decoration:none; margin:6px 0 }
 .pp-foot__link:hover{ color:var(--brand-orange) }
 .pp-foot__copy{ border-top:1px solid var(--line); color:var(--muted); font-size:12px; padding:12px 0 20px }
+.pf-badge{
+  display:inline-block; align-self:start;
+  margin-top:-6px; padding:6px 10px; border-radius:999px;
+  background:#fff; border:1px solid var(--line); font-weight:800; font-size:12px;
+}
+/* 카드 그리드 반응형 */
+.pf-grid--cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+@media (min-width: 900px){
+  .pf-grid--cards{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+
+/* 상품 뱃지 */
+.pf-badge{
+  display:inline-block; align-self:start;
+  margin-top:-6px; padding:6px 10px; border-radius:999px;
+  background:#fff; border:1px solid var(--line); font-weight:800; font-size:12px;
+}

@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
 
 const hero = [
   { title: "레반 포뮬러 런칭", desc: "장 건강을 위한 핵심 설계", cta: "/products" },
@@ -57,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* =========================
-          3) 탭형 추천 섹션(샘플)
+          3) 탭형 추천 섹션(컴포넌트 적용)
          ========================= */}
       <section className="pf-wrap pf-section">
         <header className="pf-section-head">
@@ -68,16 +69,15 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="pf-grid">
-          {/* TODO: 실제 상품 데이터 바인딩 */}
-          {Array.from({length:6}).map((_, i) => (
-            <article className="pf-card" key={i}>
-              <div className="pf-thumb">🐶</div>
-              <h4 className="pf-name">레반 · 유산균 포뮬러 {i+1}</h4>
-              <div className="pf-price"><b>29,900</b><s>35,000</s></div>
-              <Link className="pf-btn pf-btn--ghost" href="/products">자세히</Link>
-            </article>
-          ))}
+        <div className="pf-grid pf-grid--cards">
+          <ProductCard name="레반 · 유산균 포뮬러 1" price="29,900" compareAt="35,000" href="/products" badge="신상" />
+          <ProductCard name="레반 · 유산균 포뮬러 2" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 3" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 4" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 5" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 6" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 7" price="29,900" compareAt="35,000" href="/products" />
+          <ProductCard name="레반 · 유산균 포뮬러 8" price="29,900" compareAt="35,000" href="/products" />
         </div>
       </section>
     </main>
