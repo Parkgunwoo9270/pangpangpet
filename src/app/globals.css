@@ -1,23 +1,22 @@
 /* === Pangpangpet styles === */
 :root{
-  --text:#1f2937; --muted:#64748b; --line:#e5e7eb; --soft:#f8fafc; --dark:#0f172a;
-  --primary:#0ea5a4; --primary2:#059669; --from:#34d399; --to:#0ea5a4;
-  --radius:16px; --shadow:0 8px 24px rgba(2,32,71,.08); --shadow2:0 8px 18px rgba(2,32,71,.06);
+  --text:#1f2937; 
+  --muted:#64748b; 
+  --line:#e5e7eb; 
+  --soft:#f8fafc; 
+  --dark:#181828; /* 로고 네이비 */
+
+  /* 여기 4개를 로고 색상에 맞게 교체 */
+  --primary:#F29F32;   /* 로고 오렌지 */
+  --primary2:#D97A1F;  /* 오렌지 hover용 (조금 더 진한 톤) */
+  --from:#F29F32;      /* 그라데이션 시작 */
+  --to:#181828;        /* 그라데이션 끝 (네이비) */
+
+  --radius:16px; 
+  --shadow:0 8px 24px rgba(2,32,71,.08); 
+  --shadow2:0 8px 18px rgba(2,32,71,.06);
 }
-.pp-container{max-width:1100px;margin:0 auto;padding:0 20px}
-.pp-section{padding:64px 0}
-.pp-section--border{border-top:1px solid var(--line)}
-.pp-section--soft{background:var(--soft)}
-.pp-section--gradient{background:linear-gradient(180deg,#ecfdf5,#fff)}
-.pp-section__head{display:flex;gap:12px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
-.pp-section__title{font-weight:800;font-size:28px}
-.pp-section__sub{color:var(--muted);margin-top:6px}
-.pp-text{line-height:1.8}
-.pp-muted{color:var(--muted)}
-.pp-accent{color:var(--primary2);font-weight:600}
-.pp-grid-2{display:grid;grid-template-columns:1fr;gap:24px}
-@media(min-width:900px){.pp-grid-2{grid-template-columns:1fr 1.3fr}}
-.pp-text-gradient{background:linear-gradient(90deg,var(--from),var(--to));-webkit-background-clip:text;background-clip:text;color:transparent}
+
 
 /* header */
 .pp-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
