@@ -1,18 +1,37 @@
 // src/app/page.tsx
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "PangpangPet | 반려동물 장 건강 기능성 사료",
-  description:
-    "PangpangPet은 레반 기반 반려동물 장 건강 기능성 사료 브랜드입니다. 장 건강, 소화 흡수, 면역 균형을 지켜 반려동물의 행복한 삶을 함께합니다.",
-  alternates: { canonical: "https://www.pangpangpet.com/" },
-};
-
-export default function HomePage() {
+export default function HomePage(){
   return (
-    <main style={{ padding: 60 }}>
-      <h1>메인 페이지</h1>
-      <p>PangpangPet 홈페이지에 오신 것을 환영합니다.</p>
+    <main className="pp-hero">
+      <div className="pp-container pp-hero__grid">
+        <div>
+          <h1 className="pp-hero__title">
+            반려동물 장 건강, <span className="pp-text-gradient">예방이 먼저</span>
+          </h1>
+          <p className="pp-hero__desc">
+            PangpangPet — 레반 기반 장 건강 기능성 사료. <br/>
+            Prevention · Protection · Partnership
+          </p>
+          <div className="pp-hero__cta">
+            <a href="/products" className="pp-btn pp-btn--primary">제품 보기</a>
+            <a href="/brand" className="pp-btn pp-btn--ghost">브랜드 철학</a>
+          </div>
+          <ul className="pp-badges">
+            <li>레반 포뮬러</li><li>유산균 블렌드</li><li>정기구독 예정</li>
+          </ul>
+        </div>
+
+        <div className="pp-hero__right">
+          <div className="pp-mock">
+            <div className="pp-mock__emoji">🐶🐱</div>
+          </div>
+          <div className="pp-mock__caption pp-muted">PangpangPet 제품 미리보기</div>
+
+          <div className="pp-note">
+            <p className="pp-note__label">브랜드 철학</p>
+            <p className="pp-note__text">Prevention · Protection · Partnership</p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
