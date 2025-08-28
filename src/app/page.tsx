@@ -3,6 +3,7 @@ export default function HomePage(){
   return (
     <main className="pp-hero">
       <div className="pp-container pp-hero__grid">
+        {/* 왼쪽 텍스트 */}
         <div>
           <h1 className="pp-hero__title">
             반려동물 장 건강, <span className="pp-text-gradient">예방이 먼저</span>
@@ -20,6 +21,7 @@ export default function HomePage(){
           </ul>
         </div>
 
+        {/* 오른쪽 이미지/노트 */}
         <div className="pp-hero__right">
           <div className="pp-mock">
             <div className="pp-mock__emoji">🐶🐱</div>
