@@ -421,3 +421,11 @@
 .pp-card--line{
   box-shadow: 0 6px 18px rgba(0,0,0,.05);
 }
+/* Hero 프레임/오버레이 (가독성 강화) */
+.hero-frame { position: relative; border-radius: 26px; outline: 3px solid #fff; overflow: hidden; box-shadow: 0 22px 40px rgba(0,0,0,.16); }
+.hero-frame img { width:100%; height:100%; object-fit: cover; object-position: center; display:block; }
+.hero-frame--photo::after{ content:""; position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(17,24,39,.55) 0%, rgba(17,24,39,.25) 45%, rgba(17,24,39,0) 75%); pointer-events:none; }
+.hero-body{ position:absolute; inset:0; display:grid; align-content:center; gap:14px; padding:clamp(20px, 4.5vw, 48px); color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.35); }
+.hero-title{ font-weight:900; font-size:clamp(28px, 5vw, 56px); margin:0; }
+.hero-sub{ font-size:clamp(14px, 1.6vw, 18px); opacity:.95; }
