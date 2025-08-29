@@ -19,7 +19,11 @@ export default function Header() {
         {/* 로고/브랜드 */}
         <Link href="/" className="pp-brand" aria-label="PangpangPet">
           <span className="pp-brand__logo">PP</span>
-          <span className="pp-brand__name">PangpangPet</span>
+          {/* ⬇️ 텍스트 블록 추가 (브랜드명 + 슬로건) */}
+          <span className="pp-brand__text">
+            <strong className="pp-brand__name">PangpangPet</strong>
+            <small className="pp-brand__slogan">Prevention · Protection · Partnership</small>
+          </span>
         </Link>
 
         {/* GNB */}
