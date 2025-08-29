@@ -588,3 +588,67 @@
 @media (max-width: 900px){
   .pp-brand__slogan{ display:none; }
 }
+/* === HOME HERO (full-bleed) === */
+.hero{
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 80vh, 680px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: #000; /* 로딩 순간 어두움 */
+}
+
+.hero-bg{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+
+.hero-overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 75%);
+}
+
+.hero-content{
+  position: relative; z-index: 1;
+  max-width: 760px; color: #fff; padding: 0 20px;
+}
+
+.hero-title{
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.1; margin: 0 0 12px;
+}
+
+.hero-sub{
+  font-size: clamp(14px, 1.9vw, 20px);
+  opacity: .95; margin: 0 0 22px;
+  text-shadow: 0 3px 14px rgba(0,0,0,.55);
+}
+
+.hero-cta-group{
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+
+.hero-cta{
+  display: inline-block; text-decoration: none;
+  padding: 12px 20px; border-radius: 14px; font-weight: 800; transition: .2s;
+}
+
+.hero-cta--primary{ background: var(--brand-orange); color:#fff; }
+.hero-cta--primary:hover{ filter: brightness(.95); }
+
+.hero-cta--light{
+  background:#fff; color: var(--brand-navy);
+  border:2px solid var(--brand-navy);
+}
+.hero-cta--light:hover{ background: var(--brand-ivory); }
+
+/* 모바일에서 텍스트가 너무 길면 줄바꿈 여유 */
+@media (max-width: 480px){
+  .hero-sub{ word-break: keep-all; }
+}
