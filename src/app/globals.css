@@ -429,3 +429,71 @@
 .hero-body{ position:absolute; inset:0; display:grid; align-content:center; gap:14px; padding:clamp(20px, 4.5vw, 48px); color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.35); }
 .hero-title{ font-weight:900; font-size:clamp(28px, 5vw, 56px); margin:0; }
 .hero-sub{ font-size:clamp(14px, 1.6vw, 18px); opacity:.95; }
+/* Hero 전체 배경을 흰색으로 */
+.section-hero {
+  background: #fff;  /* 주황색 → 흰색 */
+  padding: 40px 0;
+}
+
+/* Hero 프레임 사진 오버레이 개선 */
+.hero-frame--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 더 진한 검은 반투명 → 텍스트 가독성 확보 */
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.35) 40%,
+    rgba(0,0,0,0) 75%
+  );
+  pointer-events: none;
+}
+
+/* Hero 텍스트 스타일 개선 */
+.hero-body {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding: clamp(20px, 4.5vw, 48px);
+  color: #fff;
+  text-shadow: 0 3px 14px rgba(0,0,0,.55); /* 더 강한 그림자 */
+  max-width: 600px; /* 텍스트 폭 제한 */
+}
+
+/* 버튼을 사진 위에서도 잘 보이게 */
+.hero-cta {
+  background: rgba(24,24,40,.85);  /* 반투명 다크 */
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+}
+.hero-cta:hover {
+  background: rgba(24,24,40,.95);
+}
+.hero-frame.hero-frame--photo {
+  position: relative;
+}
+
+.hero-frame.hero-frame--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* 어두운 오버레이 */
+}
+
+.hero-body {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* 오버레이 위에 올라오게 */
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+.hero-title, .hero-sub {
+  color: #fff; /* 텍스트를 흰색으로 */
+}
