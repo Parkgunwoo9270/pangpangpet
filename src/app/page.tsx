@@ -5,26 +5,24 @@ export default function Home() {
       {/* Hero 배너 */}
       <section className="section-hero">
         <div className="hero-rail">
-          <a className="hero-frame" href="/brand">
-            {/* 필요 시 배경 이미지 넣기 */}
-            {/* <img src="/img/hero.jpg" alt="PangpangPet Hero" /> */}
+          <div className="hero-frame">
+            <img src="/img/hero.jpg" alt="PangpangPet Hero" />
             <div className="hero-body">
               <h1 className="hero-title">PangpangPet</h1>
               <p className="hero-sub">
                 예방 중심 반려동물 헬스케어 · 레반 기반 장 건강 기능성 사료
               </p>
-              <span className="hero-cta">브랜드 알아보기</span>
+              <a href="/brand" className="hero-cta">
+                브랜드 알아보기
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
-      {/* Business (2분할 카드) */}
-      <section className="pp-wrap" style={{ paddingTop: 28 }}>
-        <h2 style={{ fontWeight: 900, margin: "0 0 10px" }}>사업 영역</h2>
-        <p style={{ color: "var(--muted)", margin: "0 0 16px" }}>
-          Prevention · Protection · Partnership
-        </p>
+      {/* Business */}
+      <section className="pp-wrap" style={{ paddingTop: 40 }}>
+        <h2 style={{ fontWeight: 900, marginBottom: 10 }}>사업 영역</h2>
         <div className="pp-cards pp-cards--3">
           <article className="pp-card pp-card--line">
             <h3 className="pp-card__title">연구개발 (R&D)</h3>
@@ -41,13 +39,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products (카테고리 그리드) */}
-      <section className="pp-wrap" style={{ paddingTop: 28 }}>
-        <h2 style={{ fontWeight: 900, margin: "0 0 10px" }}>제품</h2>
-        <p style={{ color: "var(--muted)", margin: "0 0 16px" }}>
-          PangpangPet Functional Pet Food
-        </p>
-
+      {/* Products */}
+      <section className="pp-wrap" style={{ paddingTop: 40 }}>
+        <h2 style={{ fontWeight: 900, marginBottom: 10 }}>제품</h2>
         <div className="cat-grid">
           {[
             { name: "츄르", img: "/img/cat-churu.jpg" },
@@ -65,12 +59,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 유기견 활동 티저 */}
-      <section className="pp-wrap" style={{ paddingTop: 28 }}>
-        <h2 style={{ fontWeight: 900, margin: "0 0 10px" }}>유기견 활동</h2>
-        <p style={{ color: "var(--muted)", margin: "0 0 16px" }}>
-          인식 개선 캠페인 및 입양 연계 활동
-        </p>
+      {/* ESG */}
+      <section className="pp-wrap" style={{ paddingTop: 40 }}>
+        <h2 style={{ fontWeight: 900, marginBottom: 10 }}>유기견 활동</h2>
         <div className="pp-cards">
           <div className="pp-card">
             <h3 className="pp-card__title">진행 중 캠페인</h3>
@@ -93,9 +84,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 고객지원 카드 */}
-      <section className="pp-wrap" style={{ paddingTop: 28 }}>
-        <h2 style={{ fontWeight: 900, margin: "0 0 10px" }}>고객지원</h2>
+      {/* 고객지원 */}
+      <section className="pp-wrap" style={{ paddingTop: 40 }}>
+        <h2 style={{ fontWeight: 900, marginBottom: 10 }}>고객지원</h2>
         <div className="pp-cards">
           <a className="pp-card" href="/support">
             <h3 className="pp-card__title">공지사항</h3>
