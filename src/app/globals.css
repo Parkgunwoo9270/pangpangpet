@@ -789,3 +789,61 @@
   --brand-orange: #d97706; /* 팡팡펫 주황 */
   --brand-brown: #92400e;  /* 브라운 톤 */
 }
+/* ===== Benefits (왜 PangpangPet인가요?) ===== */
+.section-benefits { padding-top: 40px; }
+.section-title{
+  font-weight: 900; margin-bottom: 16px;
+  font-size: clamp(20px, 2.6vw, 28px);
+}
+
+.benefits-grid{
+  display: grid;
+  gap: clamp(12px, 2vw, 20px);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px){
+  .benefits-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+
+/* 카드 */
+.benefit-card{
+  position: relative;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(24,24,40,.06);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.benefit-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(24,24,40,.10);
+}
+
+/* 상단 포인트 바 */
+.benefit-top{
+  height: 6px; width: 100%;
+  background: var(--brand-navy);      /* 기본 네이비 */
+}
+.benefit-top--blue   { background:#2563eb; } /* 파란 포인트 */
+.benefit-top--orange { background: var(--brand-orange); }
+
+/* 내용 */
+.benefit-body{ padding: 18px; }
+.benefit-icon{
+  width: 42px; height: 42px;
+  display:grid; place-items:center;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.benefit-title{
+  font-weight: 900; margin: 0 0 6px;
+  font-size: 18px;
+}
+.benefit-desc{
+  margin: 0; color: var(--muted);
+  line-height: 1.6;
+}

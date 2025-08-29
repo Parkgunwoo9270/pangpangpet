@@ -89,3 +89,87 @@ export default function Home() {
     </>
   );
 }
+{/* 1. 핵심 베네핏 (리디자인) */}
+<section className="pp-wrap section-benefits">
+  <h2 className="section-title">왜 PangpangPet 인가요?</h2>
+
+  <div className="benefits-grid">
+    {/* 01 */}
+    <article className="benefit-card">
+      <div className="benefit-top" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">🧪</div>
+        <h3 className="benefit-title">레반 중심 포뮬러</h3>
+        <p className="benefit-desc">
+          프럭토올리고당 기반 레반에 유산균을 더해 장 건강에 초점(초기 라인업).
+        </p>
+      </div>
+    </article>
+
+    {/* 02 */}
+    <article className="benefit-card">
+      <div className="benefit-top benefit-top--blue" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">🛡️</div>
+        <h3 className="benefit-title">예방 중심 철학</h3>
+        <p className="benefit-desc">
+          Prevention · Protection · Partnership 3P로 일관된 관리.
+        </p>
+      </div>
+    </article>
+
+    {/* 03 */}
+    <article className="benefit-card">
+      <div className="benefit-top benefit-top--orange" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">✅</div>
+        <h3 className="benefit-title">신뢰 가능한 품질</h3>
+        <p className="benefit-desc">
+          표준화된 제조·QC 체계로 안정적인 품질(협력 제조 포함).
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+{/* 1. 핵심 베네핏 (리디자인) */}
+<section className="pp-wrap section-benefits">
+  <h2 className="section-title">왜 PangpangPet 인가요?</h2>
+
+  <div className="benefits-grid">
+    {/* 01 */}
+    <article className="benefit-card">
+      <div className="benefit-top" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">🧪</div>
+        <h3 className="benefit-title">레반 중심 포뮬러</h3>
+        <p className="benefit-desc">
+          프럭토올리고당 기반 레반에 유산균을 더해 장 건강에 초점(초기 라인업).
+        </p>
+      </div>
+    </article>
+
+    {/* 02 */}
+    <article className="benefit-card">
+      <div className="benefit-top benefit-top--blue" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">🛡️</div>
+        <h3 className="benefit-title">예방 중심 철학</h3>
+        <p className="benefit-desc">
+          Prevention · Protection · Partnership 3P로 일관된 관리.
+        </p>
+      </div>
+    </article>
+
+    {/* 03 */}
+    <article className="benefit-card">
+      <div className="benefit-top benefit-top--orange" aria-hidden />
+      <div className="benefit-body">
+        <div className="benefit-icon">✅</div>
+        <h3 className="benefit-title">신뢰 가능한 품질</h3>
+        <p className="benefit-desc">
+          표준화된 제조·QC 체계로 안정적인 품질(협력 제조 포함).
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
