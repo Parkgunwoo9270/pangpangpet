@@ -1,22 +1,29 @@
 // src/components/Hero.tsx
 export default function Hero() {
   return (
-    <section className="hero">
-      {/* 배경 이미지 */}
-      <img src="/img/hero.jpg?v=4" alt="PangpangPet Hero" className="hero-bg" />
-      {/* 어두운 오버레이 (가독성) */}
-      <div className="hero-overlay" />
+    <section className="hero-split">
+      <div className="hero-split__wrap">
+        {/* 왼쪽: 카피 영역(밝은 배경) */}
+        <div className="hero-copy">
+          <h1 className="hero-copy__title">
+            <span className="accent">건강</span>에 대한—<br />
+            <strong>바른 집념</strong>
+          </h1>
+          <p className="hero-copy__sub">
+            반려동물마다 필요한 영양은 다릅니다. PangpangPet은
+            반려묘와 반려견이 최상의 장 건강 상태를 유지하도록 돕는
+            <b> 예방 중심 포뮬러</b>를 세밀하게 설계합니다.
+          </p>
 
-      {/* 중앙 컨텐츠 */}
-      <div className="hero-content">
-        <h1 className="hero-title">PangpangPet Club</h1>
-        <p className="hero-sub">
-          예방 중심 반려동물 헬스케어 · 레반 기반 장 건강 기능성 사료
-        </p>
+          <div className="hero-copy__cta">
+            <a href="/products" className="cta-red">맞춤 사료 찾기</a>
+            <a href="/brand" className="cta-ghost">브랜드 이야기</a>
+          </div>
+        </div>
 
-        <div className="hero-cta-group">
-          <a href="/brand" className="hero-cta hero-cta--primary">브랜드 알아보기</a>
-          <a href="/products" className="hero-cta hero-cta--light">제품 보러가기</a>
+        {/* 오른쪽: 큰 실사 이미지 */}
+        <div className="hero-photo">
+          <img src="/img/hero.jpg?v=5" alt="PangpangPet" />
         </div>
       </div>
     </section>
