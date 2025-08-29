@@ -1,12 +1,12 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header";   // ✅ 헤더 연결
+import Footer from "@/components/Footer";   // ✅ 푸터 연결
 import { Baloo_2, Noto_Sans_KR } from "next/font/google";
 
-const baloo = Baloo_2({ subsets: ["latin"], weight: ["700","800"] });
-const noto = Noto_Sans_KR({ subsets: ["latin"], weight: ["400","700","900"] });
+const baloo = Baloo_2({ subsets: ["latin"], weight: ["700", "800"] });
+const noto = Noto_Sans_KR({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
 export const metadata: Metadata = {
   title: "PangpangPet",
@@ -32,9 +32,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <Header />
+        <Header />   {/* ✅ 헤더 출력 */}
         {children}
-        <Footer />
+        <Footer />   {/* ✅ 푸터 출력 */}
       </body>
     </html>
   );
