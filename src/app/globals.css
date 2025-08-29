@@ -652,3 +652,22 @@
 @media (max-width: 480px){
   .hero-sub{ word-break: keep-all; }
 }
+/* === Hero 글자 가독성 개선 === */
+
+/* 1. Hero 전체 배경에 그라데이션 오버레이 추가 */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.25) 70%,
+    rgba(0,0,0,0.1) 100%
+  );
+}
+
+/* 2. 텍스트 그림자 (글자가 더 선명해짐) */
+.hero-title,
+.hero-sub {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+}
