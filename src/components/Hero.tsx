@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 export default function Hero() {
   return (
     <section className="hero-split">
@@ -6,8 +5,7 @@ export default function Hero() {
         {/* 왼쪽: 카피 영역(밝은 배경) */}
         <div className="hero-copy">
           <h1 className="hero-copy__title">
-            <span className="accent">건강</span>에 대한—<br />
-            <strong>바른 집념</strong>
+            <span className="accent">건강</span>에 대한 — 바른 집념
           </h1>
           <p className="hero-copy__sub">
             반려동물마다 필요한 영양은 다릅니다. PangpangPet은

@@ -746,3 +746,10 @@
   .hero-photo{ order: 2; }
   .hero-copy{ order: 1; }
 }
+.hero-copy__title {
+  font-size: clamp(26px, 3.6vw, 42px); /* 기존보다 살짝 줄임 */
+  line-height: 1.2;
+  font-weight: 900;
+  margin: 0 0 12px;
+  white-space: nowrap; /* 화면이 넓으면 무조건 한 줄 */
+}
