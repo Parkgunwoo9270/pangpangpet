@@ -351,3 +351,73 @@
   position: relative;
   z-index: 1; /* 배경 위에 내용 표시 */
 }
+/* ===== Hero Photo Overlay & Frame Tuning ===== */
+.hero-frame {
+  border-radius: 26px;                /* 라운드 더 부드럽게 */
+  outline: 3px solid #fff;            /* 흰 외곽선 유지 */
+  box-shadow: 0 22px 40px rgba(0,0,0,.16);  /* 그림자 살짝 강화 */
+}
+.hero-frame--photo { position: relative; }
+.hero-frame--photo::after{
+  content:"";
+  position:absolute; inset:0;
+  /* 사진 위에 좌→우 그라데이션(어두운 네이비) */
+  background: linear-gradient(90deg, rgba(17,24,39,.55) 0%, rgba(17,24,39,.25) 45%, rgba(17,24,39,0) 75%);
+  pointer-events:none;
+}
+.hero-body{
+  align-content: center;
+  padding: clamp(20px, 4.5vw, 48px);
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);  /* 가독성 보강 */
+}
+.hero-title{ color:#fff; }
+.hero-sub{ color:#f3f4f6; }
+
+/* ===== Section rhythm (간격/제목) ===== */
+.pp-wrap section-title, .section-title{} /* (비워둠: 향후 유틸 확장용) */
+.pp-wrap > h2{
+  font-weight: 900;
+  margin: 0 0 12px;
+}
+.pp-wrap{ padding-top: clamp(32px, 5vw, 56px); }  /* 섹션 상단 여백 기본값 */
+
+/* ===== FAQ details 스타일 업 ===== */
+.pp-faq details{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fff;
+}
+.pp-faq summary{
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+.pp-faq summary::-webkit-details-marker{ display:none; }
+.pp-faq summary::after{
+  content: "▸";
+  float: right;
+  transition: transform .2s;
+}
+.pp-faq[open] summary::after,
+.pp-faq details[open] summary::after{ transform: rotate(90deg); }
+
+/* ===== 제품 타일(이미지 없을 때 플레이스홀더 처리) ===== */
+.cat{ background: #fafafa; }
+.cat img{
+  width:100%; height: 220px; object-fit: cover; display:block;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+.cat__label{
+  position:absolute; left:10px; bottom:10px;
+  background: rgba(17,24,39,.65); color:#fff;
+  font-weight: 900; padding: 8px 12px; border-radius: 999px; font-size: 13px;
+}
+
+/* ===== 카드 그림자/여백 살짝 강화로 “이벤트 사이트 느낌” ===== */
+.pp-card{
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.pp-card--line{
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
