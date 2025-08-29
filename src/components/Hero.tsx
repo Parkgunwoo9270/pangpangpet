@@ -14,7 +14,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-copy__cta">
-            <a href="/products" className="cta-red">맞춤 사료 찾기</a>
+            <a href="/products" className="cta-red">예방 시작</a>
             <a href="/brand" className="cta-ghost">브랜드 이야기</a>
           </div>
         </div>

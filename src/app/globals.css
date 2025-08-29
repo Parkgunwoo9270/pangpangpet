@@ -753,3 +753,39 @@
   margin: 0 0 12px;
   white-space: nowrap; /* 화면이 넓으면 무조건 한 줄 */
 }
+/* PangpangPet CTA 버튼 (브랜드 컬러 적용) */
+.cta-brand {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand-orange); /* 브랜드 주황색 */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-brand:hover {
+  background: #b45f06; /* 브라운 톤 hover 색상 */
+}
+
+.cta-ghost {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: var(--brand-orange);
+  border: 2px solid var(--brand-orange);
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-ghost:hover {
+  background: var(--brand-orange);
+  color: #fff;
+}
+:root {
+  --brand-orange: #d97706; /* 팡팡펫 주황 */
+  --brand-brown: #92400e;  /* 브라운 톤 */
+}
