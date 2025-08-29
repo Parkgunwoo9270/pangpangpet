@@ -327,3 +327,27 @@
 .gnb-item{position:relative}
 .gnb-top{display:inline-block; padding:12px 8px; font-weight:800; text-decoration:none; color:var(--text)}
 .gnb-top:hover{ color:var(--primary2) }
+/* Hero 배경 꾸미기 */
+.hero-frame--bg {
+  background: linear-gradient(135deg, #F29F32 0%, #181828 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 은은한 포우(🐾) 패턴 효과 */
+.hero-frame--bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.15) 16%, transparent 18%),
+    radial-gradient(rgba(255,255,255,0.08) 12%, transparent 14%);
+  background-size: 140px 140px, 120px 120px;
+  background-position: 0 0, 70px 70px;
+  opacity: 0.5;
+  z-index: 0;
+}
+.hero-frame--bg .hero-body {
+  position: relative;
+  z-index: 1; /* 배경 위에 내용 표시 */
+}
